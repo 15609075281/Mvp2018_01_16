@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:fitsSystemWindows="true"
+				android:background="#49444a"
+				android:clipToPadding="false"
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+	<TextView
+			android:id="@+id/register"
+			android:layout_width="wrap_content"
+			android:layout_height="30dp"
+			android:gravity="center"
+			android:text="注册账号"
+			android:textSize="16sp"
+			android:layout_alignParentRight="true"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="10dp"
+			android:background="#ffffff"
+	/>
+
+	<LinearLayout android:layout_width="match_parent"
+				  android:orientation="vertical"
+				  android:layout_centerInParent="true"
+				  android:layout_height="200dp">
+		<EditText
+				android:paddingLeft="10dp"
+				android:hint="输入用户名"
+				android:textSize="16sp"
+				android:id="@+id/name"
+				android:divider="@null"
+				android:layout_margin="10dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/loginshape"
+		/>
+		<EditText
+				android:layout_margin="10dp"
+				android:paddingLeft="10dp"
+				android:hint="输入密码"
+				android:textSize="16sp"
+				android:id="@+id/pwd"
+				android:layout_width="match_parent"
+				android:divider="@null"
+				android:layout_height="wrap_content"
+				android:background="@drawable/loginshape"
+		/>
+		<TextView
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="25dp"
+				android:id="@+id/login1"
+				android:text="登录"
+				android:textSize="20sp"
+				android:gravity="center"
+				android:background="@drawable/loginshapeb"
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"/>
+	</LinearLayout>
+	<LinearLayout
+			android:layout_marginBottom="80dp"
+			android:gravity="center"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_alignParentBottom="true"
+			android:layout_height="100dp">
+		<com.coorchice.library.SuperTextView
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				app:state_drawable="@mipmap/ic_launcher"
+				app:state_drawable_mode="center"
+				app:state_drawable_height="30dp"
+				app:state_drawable_width="30dp"
+				app:isShowState="true"
+				app:text_stroke="true"
+				app:corner="10dp"
+		/>
+		<com.coorchice.library.SuperTextView
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				app:state_drawable="@mipmap/ic_launcher"
+				app:state_drawable_mode="center"
+				app:state_drawable_height="30dp"
+				app:state_drawable_width="30dp"
+				app:isShowState="true"
+				app:text_stroke="true"
+				app:corner="10dp"
+		/>
+		<com.coorchice.library.SuperTextView
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				app:state_drawable="@mipmap/ic_launcher"
+				app:state_drawable_mode="center"
+				app:state_drawable_height="30dp"
+				app:state_drawable_width="30dp"
+				app:isShowState="true"
+				app:text_stroke="true"
+				app:corner="10dp"
+		/>
+
+	</LinearLayout>
+
+
+</RelativeLayout>

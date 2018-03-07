@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="line"
+>
+    <!--  width 线粗 dashGap间隙 dashWidth线宽 -->
+    <stroke
+            android:width="2dp"
+            android:color="#4cffffff"
+            android:dashGap="5dp"
+            android:dashWidth="5dp"/>
+
+</shape>

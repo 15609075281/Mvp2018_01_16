@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+				android:background="#FFFFE0"
+				android:layout_height="match_parent">
+
+	<com.coorchice.library.SuperTextView
+			android:id="@+id/back1"
+			android:layout_width="40dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginLeft="10dp"
+			android:layout_height="40dp"
+			app:state_drawable="@mipmap/ic_launcher"
+			app:state_drawable_mode="center"
+			app:state_drawable_height="30dp"
+			app:state_drawable_width="30dp"
+			app:isShowState="true"
+			app:text_stroke="true"
+			app:corner="10dp"
+	/>
+
+	<LinearLayout
+			android:layout_centerInParent="true"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_height="200dp">
+		<EditText
+				android:paddingLeft="10dp"
+				android:hint="输入用户名"
+				android:textSize="16sp"
+				android:id="@+id/name"
+				android:divider="@null"
+				android:layout_margin="10dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/loginshape"
+		/>
+		<EditText
+				android:layout_margin="10dp"
+				android:paddingLeft="10dp"
+				android:hint="输入密码"
+				android:textSize="16sp"
+				android:id="@+id/pwd"
+				android:layout_width="match_parent"
+				android:divider="@null"
+				android:layout_height="wrap_content"
+				android:background="@drawable/loginshape"
+		/>
+		<TextView
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="25dp"
+				android:id="@+id/register"
+				android:text="立即注册"
+				android:textSize="20sp"
+				android:gravity="center"
+				android:background="@drawable/loginshapeb"
+				android:layout_width="200dp"
+				android:layout_height="wrap_content"/>
+	</LinearLayout>
+
+</RelativeLayout>
