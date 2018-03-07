@@ -1,15 +1,11 @@
 package com.hc.mvp.activity_fragment.mvp.model;
 
 import com.hc.mvp.tool.NetworkRequest.NetworkInfo;
-import com.hc.mvp.tool.NetworkRequest.xUtilsNetwork;
+import com.hc.mvp.tool.NetworkRequest.UtilsNetwork;
 import com.jingewenku.abrahamcaijin.commonutil.AppLogMessageMgr;
-import com.jingewenku.abrahamcaijin.commonutil.AppToastMgr;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
-import org.xutils.http.annotation.HttpResponse;
-import org.xutils.x;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,10 +16,10 @@ import java.util.Map;
  */
 public class LoginModelImpl implements LoginModel {
 
-    xUtilsNetwork xUtilsNetwork1;
+    UtilsNetwork xUtilsNetwork1;
 
     public LoginModelImpl() {
-        xUtilsNetwork1 = xUtilsNetwork.getIntens();
+        xUtilsNetwork1 = UtilsNetwork.getIntens();
     }
 
     /**

@@ -15,5 +15,6 @@ public class NetworkInfo {
     public static String Url_register = url_title + "/test/register";//name=成龙&password=123456
     //首页
     public static String Url_home = url_title + "/main/home";
+    public static String Url_person = url_title + "/main/person";
 
 }

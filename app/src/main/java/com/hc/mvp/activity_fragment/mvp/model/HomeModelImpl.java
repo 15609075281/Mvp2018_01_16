@@ -4,8 +4,7 @@ import android.util.Log;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneItemInfo;
 import com.hc.mvp.tool.NetworkRequest.NetworkInfo;
-import com.hc.mvp.tool.NetworkRequest.xUtilsNetwork;
-import com.jingewenku.abrahamcaijin.commonutil.AppLogMessageMgr;
+import com.hc.mvp.tool.NetworkRequest.UtilsNetwork;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +18,7 @@ import java.util.List;
  */
 public class HomeModelImpl implements HomeModel {
 
-    xUtilsNetwork xUtilsNetwork;
+    UtilsNetwork xUtilsNetwork;
 
     @Override
     public void HomeModel(OnHomeLister onHomeLister) {

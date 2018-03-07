@@ -11,18 +11,18 @@ import java.util.Map;
  * Created by Administrator on 2018/2/26.
  * xUtils 网络请求封装
  */
-public class xUtilsNetwork {
-    public static xUtilsNetwork xUtilsNetwork;
+public class UtilsNetwork {
+    public static UtilsNetwork xUtilsNetwork;
 
     /**
      *
      */
-    public static xUtilsNetwork getIntens() {
+    public static UtilsNetwork getIntens() {
 
         if (xUtilsNetwork == null) {
-            synchronized (xUtilsNetwork.class) {
+            synchronized (UtilsNetwork.class) {
                 if (xUtilsNetwork == null) {
-                    xUtilsNetwork = new xUtilsNetwork();
+                    xUtilsNetwork = new UtilsNetwork();
                 }
             }
         }
