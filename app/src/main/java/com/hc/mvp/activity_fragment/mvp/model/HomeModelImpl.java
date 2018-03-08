@@ -1,6 +1,7 @@
 package com.hc.mvp.activity_fragment.mvp.model;
 
 import android.util.Log;
+import com.hc.mvp.activity_fragment.ui.mainbody.Bean.BannerOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneItemInfo;
 import com.hc.mvp.tool.NetworkRequest.NetworkInfo;
@@ -20,10 +21,19 @@ public class HomeModelImpl implements HomeModel {
 
     UtilsNetwork xUtilsNetwork;
 
+    public HomeModelImpl() {
+        xUtilsNetwork = xUtilsNetwork.getIntens();
+
+    }
+
     @Override
     public void HomeModel(OnHomeLister onHomeLister) {
-        xUtilsNetwork = xUtilsNetwork.getIntens();
         homeNetwork(onHomeLister);
+    }
+
+    @Override
+    public void HomeBannerModel(OnHomeBannerLister onHomeBannerLister) {
+        netBanner(onHomeBannerLister);
     }
 
     /**
@@ -77,6 +87,56 @@ public class HomeModelImpl implements HomeModel {
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
                 Log.e("onError", ex.toString());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+    }
+
+    /**
+     * 获取Banner
+     */
+    public void netBanner(final OnHomeBannerLister onHomeBannerLister) {
+
+        xUtilsNetwork.xUtilsPostNull(NetworkInfo.Url_home_banner, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    String msg = jsonObject.getString("msg");
+                    String result1 = jsonObject.getString("result");
+                    String url_image = jsonObject.getString("url_image");
+                    if (msg.equals("200")) {
+                        List<BannerOneInfo> list = new ArrayList<>();
+                        JSONArray jsonArray=new JSONArray(url_image);
+                        for (int i = 0; i <jsonArray.length() ; i++) {
+                            JSONObject jsonObject1=jsonArray.getJSONObject(i);
+                            BannerOneInfo bannerOneInfo=new BannerOneInfo();
+                            bannerOneInfo.setImage_url(jsonObject1.getString("image_url"));
+                            bannerOneInfo.setText_name(jsonObject1.getString("text_name"));
+                            list.add(bannerOneInfo);
+                        }
+                        onHomeBannerLister.OnSuccess(list);
+                    } else {
+                        onHomeBannerLister.OnError(result1);
+                    }
+                } catch (JSONException e) {
+
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
             }
 
             @Override

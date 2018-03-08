@@ -12,6 +12,7 @@ import com.hc.mvp.R;
 import com.hc.mvp.activity_fragment.Manager.BaseFragment;
 import com.hc.mvp.activity_fragment.mvp.persenter.HomePersenter;
 import com.hc.mvp.activity_fragment.mvp.view.HomeView;
+import com.hc.mvp.activity_fragment.ui.mainbody.Bean.BannerOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.adapter.HomeFragmentOneAdapter;
 import com.hc.mvp.tool.image.GlideImageLoader;
@@ -70,8 +71,9 @@ public class HomeFragment extends BaseFragment implements HomeView {
     @Override
     public void onStart() {
         super.onStart();
-//        banner_home.startAutoPlay();
         homePersenter.getHomeList();
+        homePersenter.getBanner();
+//        banner_home.startAutoPlay();
     }
 
     @Override
@@ -84,12 +86,36 @@ public class HomeFragment extends BaseFragment implements HomeView {
         homePersenter = new HomePersenter(this);
         //刷新，加载
         SmartRefreshLayout();
-        //Banner
-        Banner();
         //RecyclerView
         RecyclerView();
     }
 
+    /**
+     * Banner 获取数据返回
+     *
+     * @param oneInfoList
+     */
+    @Override
+    public void OnBannerSuccess(List<BannerOneInfo> oneInfoList) {
+        images = new ArrayList<>();
+        titles = new ArrayList<>();
+        for (int i = 0; i < oneInfoList.size(); i++) {
+            images.add(oneInfoList.get(i).getImage_url());
+            titles.add(oneInfoList.get(i).getText_name());
+        }
+        Banner();
+    }
+
+    @Override
+    public void OnBannerError(String error) {
+        AppToastMgr.Toast(context, error);
+    }
+
+    /**
+     * 主页获取数据返回集
+     *
+     * @param homeOneInfoList
+     */
     @Override
     public void OnSuccess(List<HomeOneInfo> homeOneInfoList) {
         this.homeOneInfoList = homeOneInfoList;
@@ -126,9 +152,8 @@ public class HomeFragment extends BaseFragment implements HomeView {
      * Banner
      */
     private void Banner() {
-        Data();
         banner_home = (Banner) view.findViewById(R.id.banner_home);
-         //设置banner样式
+        //设置banner样式
         banner_home.setBannerStyle(BannerConfig.NUM_INDICATOR_TITLE);
         //设置图片加载器
         banner_home.setImageLoader(new GlideImageLoader());
@@ -153,19 +178,6 @@ public class HomeFragment extends BaseFragment implements HomeView {
         });
         //banner设置方法全部调用完毕时最后调用
         banner_home.start();
-    }
-
-    private void Data() {
-        images = new ArrayList<>();
-        images.add("https://www.baidu.com/img/bd_logo1.png");
-        images.add("https://www.baidu.com/img/bd_logo1.png");
-        images.add("https://www.baidu.com/img/bd_logo1.png");
-        images.add("https://www.baidu.com/img/bd_logo1.png");
-        titles = new ArrayList<>();
-        titles.add("图一");
-        titles.add("图二");
-        titles.add("图三");
-        titles.add("图四");
     }
 
     /**

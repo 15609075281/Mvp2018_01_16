@@ -3,6 +3,7 @@ package com.hc.mvp.activity_fragment.mvp.persenter;
 import com.hc.mvp.activity_fragment.mvp.model.HomeModel;
 import com.hc.mvp.activity_fragment.mvp.model.HomeModelImpl;
 import com.hc.mvp.activity_fragment.mvp.view.HomeView;
+import com.hc.mvp.activity_fragment.ui.mainbody.Bean.BannerOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneInfo;
 
 import java.util.List;
@@ -21,8 +22,8 @@ public class HomePersenter {
         homeModel = new HomeModelImpl();
     }
 
-    public void getHomeList( ) {
-        homeModel.HomeModel(new HomeModel.OnHomeLister<HomeOneInfo>() {
+    public void getHomeList() {
+        homeModel.HomeModel(new HomeModel.OnHomeLister() {
             @Override
             public void OnSuccess(List<HomeOneInfo> homeOneInfoList) {
                 homeView.OnSuccess(homeOneInfoList);
@@ -33,5 +34,21 @@ public class HomePersenter {
                 homeView.OnError(error);
             }
         });
+    }
+
+    public void getBanner() {
+
+        homeModel.HomeBannerModel(new HomeModel.OnHomeBannerLister() {
+            @Override
+            public void OnSuccess(List<BannerOneInfo> bannerOneInfoList) {
+                homeView.OnBannerSuccess(bannerOneInfoList);
+            }
+
+            @Override
+            public void OnError(String error) {
+                homeView.OnBannerError(error);
+            }
+        });
+
     }
 }
