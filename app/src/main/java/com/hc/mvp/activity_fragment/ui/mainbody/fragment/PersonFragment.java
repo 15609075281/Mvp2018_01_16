@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class PersonFragment extends Fragment implements PersonView {
     private PersonPersenter<PersonFragmentOneInfo> fragmentOneInfoPersonPersenter;
     private View view;
     private RecyclerView person_recyclerview;
-    private GridLayoutManager gridLayoutManager;
+        private GridLayoutManager gridLayoutManager;
     private List<PersonFragmentOneInfo> personFragmentOneInfoList;
 
     @Override
@@ -49,7 +50,7 @@ public class PersonFragment extends Fragment implements PersonView {
         view = getView();
         fragmentOneInfoPersonPersenter = new PersonPersenter<>(this);
         person_recyclerview = (RecyclerView) view.findViewById(R.id.person_recyclerview);
-        gridLayoutManager = new GridLayoutManager(context, 4, LinearLayoutManager.VERTICAL, true);
+        gridLayoutManager = new GridLayoutManager(context, 3, LinearLayoutManager.HORIZONTAL, false);
         person_recyclerview.setLayoutManager(gridLayoutManager);
         fragmentOneInfoPersonPersenter.netWork();
     }
@@ -58,7 +59,7 @@ public class PersonFragment extends Fragment implements PersonView {
     @Override
     public void OnSuccess(List success) {
         this.personFragmentOneInfoList = success;
-        PersonFragmentOneAdapter  personFragmentOneAdapter = new PersonFragmentOneAdapter(personFragmentOneInfoList);
+        PersonFragmentOneAdapter personFragmentOneAdapter = new PersonFragmentOneAdapter(personFragmentOneInfoList);
         person_recyclerview.setAdapter(personFragmentOneAdapter);
     }
 
