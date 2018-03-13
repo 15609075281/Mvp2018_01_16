@@ -12,6 +12,7 @@ import java.util.Map;
  * xUtils 网络请求封装
  */
 public class UtilsNetwork {
+
     public static UtilsNetwork xUtilsNetwork;
 
     /**

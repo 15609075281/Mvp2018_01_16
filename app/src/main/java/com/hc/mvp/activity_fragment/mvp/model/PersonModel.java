@@ -7,6 +7,10 @@ import java.util.List;
  */
 public interface PersonModel {
 
+    /**
+     * 我的主页控件数据接口
+     * @param onPersonLister
+     */
     void Network(OnPersonLister onPersonLister);
 
     interface OnPersonLister<T> {

@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
+    //默认配置
     defaultConfig {
         applicationId "com.hc.mvp"
         minSdkVersion 15
@@ -11,43 +12,46 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+                }
+            }
+
+
+    repositories {
+        jcenter() // If not already there
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+        compile 'com.android.support:appcompat-v7:25.+'
+        testCompile 'junit:junit:4.12'
+        //多权限
+        compile 'com.abrahamcaijin.commonutil:CommonUtil:1.0.2'
+        //xUtils
+        compile 'org.xutils:xutils:3.5.0'
+        //6.0动态权限
+        compile 'com.nobrain.android.permissions:library:1.1.0'
+        //侵入式状态栏
+        compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+        //ImageLoader
+        compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+        //多功能textview
+        compile 'com.github.chenBingX:SuperTextView:v1.4'
+        //recyclerview
+        compile 'com.android.support:recyclerview-v7:25.0.+'
+        //刷新
+        compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
+        //Banner
+        compile 'com.youth.banner:banner:1.4.10'  //最新版本
+
+
     }
 }
-repositories {
-    jcenter() // If not already there
-    maven { url 'https://jitpack.io' }
-}
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.+'
-    testCompile 'junit:junit:4.12'
-    //多权限
-    compile 'com.abrahamcaijin.commonutil:CommonUtil:1.0.2'
-    //xUtils
-    compile 'org.xutils:xutils:3.5.0'
-    //6.0动态权限
-    compile 'com.nobrain.android.permissions:library:1.1.0'
-    //侵入式状态栏
-    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
-    //ImageLoader
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
-    //多功能textview
-    compile 'com.github.chenBingX:SuperTextView:v1.4'
-    //recyclerview
-    compile 'com.android.support:recyclerview-v7:25.0.+'
-    //刷新
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-7'
-    //Banner
-    compile 'com.youth.banner:banner:1.4.10'  //最新版本
-
-}
