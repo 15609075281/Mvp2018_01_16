@@ -6,6 +6,7 @@
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/x24"
             android:id="@+id/refreshLayout"
             android:layout_height="wrap_content">
         <!--滑动-->

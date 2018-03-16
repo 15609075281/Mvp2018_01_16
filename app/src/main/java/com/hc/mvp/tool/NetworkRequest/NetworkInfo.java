@@ -7,7 +7,7 @@ package com.hc.mvp.tool.NetworkRequest;
 public class NetworkInfo {
 
 
-    public static String url_title = "http://192.168.1.195:8080";
+    public static String url_title = "http://192.168.1.191:8080";
 
     //登录
     public static String Url_login = url_title + "/test/login";  //name=成龙&password=123456

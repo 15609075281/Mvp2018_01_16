@@ -7,6 +7,7 @@
 
 
     <android.support.v4.widget.NestedScrollView
+            android:layout_marginTop="@dimen/x24"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
