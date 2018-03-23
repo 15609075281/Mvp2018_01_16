@@ -1,1 +1,1 @@
-include ':app', ':gridviewtest', ':gridviewtest'
+include ':app', ':gridviewtest', ':gridviewtest', ':suspensionrecyclerview'
