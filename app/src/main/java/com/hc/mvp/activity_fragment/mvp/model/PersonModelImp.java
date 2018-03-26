@@ -2,8 +2,8 @@ package com.hc.mvp.activity_fragment.mvp.model;
 
 import android.util.Log;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.PersonFragmentOneInfo;
-import com.hc.mvp.tool.NetworkRequest.NetworkInfo;
-import com.hc.mvp.tool.NetworkRequest.UtilsNetwork;
+import com.hc.mvp.tools.NetworkRequest.NetworkInfo;
+import com.hc.mvp.tools.NetworkRequest.UtilsNetwork;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

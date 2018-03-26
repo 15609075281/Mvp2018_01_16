@@ -1,4 +1,4 @@
-package com.hc.mvp.tool.image;
+package com.hc.mvp.tools.image;
 
 
 import com.nostra13.universalimageloader.core.ImageLoader;

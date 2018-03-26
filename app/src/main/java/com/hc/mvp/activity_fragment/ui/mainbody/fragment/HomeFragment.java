@@ -15,7 +15,7 @@ import com.hc.mvp.activity_fragment.mvp.view.HomeView;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.BannerOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.Bean.HomeOneInfo;
 import com.hc.mvp.activity_fragment.ui.mainbody.adapter.HomeFragmentOneAdapter;
-import com.hc.mvp.tool.image.GlideImageLoader;
+import com.hc.mvp.tools.image.GlideImageLoader;
 import com.jingewenku.abrahamcaijin.commonutil.AppToastMgr;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -25,7 +25,6 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.youth.banner.listener.OnBannerListener;
-import com.youth.banner.loader.ImageLoaderInterface;
 
 import java.util.ArrayList;
 import java.util.List;

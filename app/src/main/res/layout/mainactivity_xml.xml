@@ -43,6 +43,27 @@
                 android:layout_height="match_parent"
                 android:background="#000000">
         </View>
+        <LinearLayout
+                android:id="@+id/advertising"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <ImageView android:layout_width="20dp"
+                       android:src="@drawable/h1"
+                       android:layout_height="20dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_marginTop="5dp"
+                      android:text="广告"
+                      android:textSize="18sp"
+                      android:layout_height="20dp"/>
+        </LinearLayout>
+        <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#000000">
+        </View>
         <!--我的-->
         <LinearLayout
                 android:orientation="vertical"
